@@ -12,7 +12,7 @@ mqtt_server = 'broker.emqx.io'
 client_id = ubinascii.hexlify(machine.unique_id())
 print(client_id)
 topic_sub = b'notification'
-topic_sub1 = b'LED'
+topic_sub1 = b'upd'
 topic_pub = b'sensorqw'
 
 last_message = 0
