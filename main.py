@@ -54,6 +54,7 @@ while True:
     if (time.time() - last_message) > message_interval:
       msg = b'{}'.format(counter)
       client.publish(topic_pub, msg)
+      client.publish(b'estado', b'{}'.format(rl_1.value()))
       last_message = time.time()
       counter += 1
       rl_1.value(not rl_1.value())
