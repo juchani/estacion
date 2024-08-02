@@ -40,7 +40,7 @@ def connect_and_subscribe():
 
 def restart_and_reconnect():
     print('Failed to connect to MQTT broker. Reconnecting...')
-    time.sleep(10)
+    time.sleep(1)
     machine.reset()
 
 try:
