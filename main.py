@@ -16,7 +16,7 @@ topic_sub1 = b'upd'
 topic_pub = b'sensorqw'
 
 last_message = 0
-message_interval = 1
+message_interval = 56
 counter = 0
 
 def sub_cb(topic, msg):
