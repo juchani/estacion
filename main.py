@@ -3,6 +3,6 @@ from time import sleep
 relay=Pin(21,Pin.OUT)
 while True:
     relay.on()
-    sleep(5)
+    sleep(1)
     relay.off()
-    sleep(5)
+    sleep(1)
