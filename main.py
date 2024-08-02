@@ -7,11 +7,11 @@ import micropython
 import network
 from wifi import Red
 Red("Familia Juchani","8884992sc")
-
+rl_1=machine.Pin(21,machine.Pin.OUT)
 mqtt_server = 'broker.emqx.io'
 client_id = ubinascii.hexlify(machine.unique_id())
 print(client_id)
-topic_sub = b'notification'
+topic_sub = b'Relay'
 topic_sub1 = b'upd'
 topic_pub = b'sensorqw'
 
@@ -21,7 +21,7 @@ counter = 0
 
 def sub_cb(topic, msg):
     print((topic, msg))
-    if topic == b'notification':
+    if topic == b'Relay':
         print(int(msg))
     if topic == b'upd':
         if(int(msg)>1):
@@ -56,5 +56,6 @@ while True:
       client.publish(topic_pub, msg)
       last_message = time.time()
       counter += 1
+      rl_1.value(not rl_1.value())
   except OSError as e:
     restart_and_reconnect()
