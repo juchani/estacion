@@ -57,7 +57,7 @@ while True:
       msg = b'{}'.format(counter)
       client.publish(topic_pub, msg)
       client.publish(b'estado', b'{}'.format(rl_1.value()))
-      client.publish(b'V1', b'{}'.format(rl_1.value()))
+      client.publish(b'V1', b'33')
       last_message = time.time()
       counter += 1
       led.value(not led.value())
