@@ -7,7 +7,7 @@ import micropython
 import network
 from wifi import Red
 Red("Familia Juchani","8884992sc")
-ver=2
+ver=4
 led=machine.Pin(14,machine.Pin.OUT)
 rl_1=machine.Pin(12,machine.Pin.OUT)
 
