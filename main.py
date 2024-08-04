@@ -26,6 +26,7 @@ def sub_cb(topic, msg):
     print((topic, msg))
     if topic == b'Relay':
         rl_1.value(int(msg))
+        led.value(int(msg))
     if topic == b'upd':
         if(int(msg)>1):
             import upd
