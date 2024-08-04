@@ -7,7 +7,7 @@ import micropython
 import network
 from wifi import Red
 Red("Familia Juchani","8884992sc")
-ver=39
+ver=1
 led=machine.Pin(14,machine.Pin.OUT)
 rl_1=machine.Pin(12,machine.Pin.OUT)
 
@@ -19,7 +19,7 @@ topic_sub1 = b'upd'
 topic_pub = b'sensorqw'
 
 last_message = 0
-message_interval = 1
+message_interval = 0.5
 counter = 0
 
 def sub_cb(topic, msg):
