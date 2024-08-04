@@ -7,7 +7,7 @@ import micropython
 import network
 from wifi import Red
 Red("Familia Juchani","8884992sc")
-rl_1=machine.Pin(2,machine.Pin.OUT)
+rl_1=machine.Pin(1,machine.Pin.OUT)
 mqtt_server = 'broker.emqx.io'
 client_id = ubinascii.hexlify(machine.unique_id())
 print(client_id)
