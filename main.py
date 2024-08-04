@@ -7,8 +7,9 @@ import micropython
 import network
 from wifi import Red
 Red("Familia Juchani","8884992sc")
-led=machine.Pin(14,machine.Pin.OUT)
-rl_1=machine.Pin(12,machine.Pin.OUT)
+ver=35
+led=machine.Pin(12,machine.Pin.OUT)
+rl_1=machine.Pin(14,machine.Pin.OUT)
 
 mqtt_server = 'broker.emqx.io'
 client_id = ubinascii.hexlify(machine.unique_id())
@@ -57,7 +58,7 @@ while True:
       msg = b'{}'.format(counter)
       client.publish(topic_pub, msg)
       client.publish(b'estado', b'{}'.format(rl_1.value()))
-      client.publish(b'V1', b'34')
+      client.publish(b'V1', b'{}'.format(ver))
       last_message = time.time()
       counter += 1
       led.value(not led.value())
